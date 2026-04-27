@@ -3,98 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tenue · La Grange</title>
+  <title>Concours de Ball-trap · 13 Juin 2026 · Lapeyrouse</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="ball-trap-page">
+
+<svg class="target-deco" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#f5e8c8" stroke-width="0.5"/>
+  <circle cx="100" cy="100" r="75" fill="none" stroke="#f5e8c8" stroke-width="0.5"/>
+  <circle cx="100" cy="100" r="55" fill="none" stroke="#f5e8c8" stroke-width="0.5"/>
+  <circle cx="100" cy="100" r="35" fill="none" stroke="#f5e8c8" stroke-width="0.5"/>
+  <circle cx="100" cy="100" r="15" fill="none" stroke="#f5e8c8" stroke-width="0.5"/>
+  <line x1="0" y1="100" x2="200" y2="100" stroke="#f5e8c8" stroke-width="0.3"/>
+  <line x1="100" y1="0" x2="100" y2="200" stroke="#f5e8c8" stroke-width="0.3"/>
+</svg>
 
 <div class="page-content">
 
-  <a href="index.html" class="back-link">Retour à l'accueil</a>
-
-  <p class="page-eyebrow">Code vestimentaire</p>
-  <h1 class="page-title">Élégance <em>champêtre</em></h1>
-  <p class="page-subtitle">Un mélange de chic et de nature — voici l'esprit.</p>
-
-  <!-- ── CAROUSEL ─────────────────── -->
-  <div class="carousel" id="carousel">
-    <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-slide carousel-slide-1" data-label="Lin & légèreté"></div>
-      <div class="carousel-slide carousel-slide-2" data-label="Tons naturels"></div>
-      <div class="carousel-slide carousel-slide-3" data-label="Élégance décontractée"></div>
-      <div class="carousel-slide carousel-slide-4" data-label="Esprit jardin"></div>
+  <div class="bt-hero">
+    <p class="eyebrow fade-in d1">Samedi 13 Juin 2026 &middot; Après-midi</p>
+    <h1 class="fade-in d2">Concours de <em>Ball-trap</em></h1>
+    <div class="ornament fade-in d3" aria-hidden="true" style="justify-content:center;color:rgba(245,232,200,0.6);">
+      <span class="orn-line"></span>
+      <span class="orn-dot"></span>
+      <span class="orn-line"></span>
     </div>
-    <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Précédent">‹</button>
-    <button class="carousel-btn carousel-next" onclick="moveCarousel(1)" aria-label="Suivant">›</button>
-  </div>
-  <div class="carousel-dots" id="carouselDots">
-    <button class="carousel-dot active" onclick="goToSlide(0)"></button>
-    <button class="carousel-dot" onclick="goToSlide(1)"></button>
-    <button class="carousel-dot" onclick="goToSlide(2)"></button>
-    <button class="carousel-dot" onclick="goToSlide(3)"></button>
+    <p class="page-subtitle fade-in d4">À Lapeyrouse (01330) · Tournoi convivial<br>Débutants bienvenus, champions encore plus.</p>
   </div>
 
-  <div class="section-rule"></div>
-
-  <!-- ── EXPLICATIONS ─────────────────── -->
-  <div class="tenue-grid">
-    <div class="tenue-text">
-      <h3>L'esprit en deux mots</h3>
-      <div>
-        <span class="dress-tag">Élégance champêtre</span>
-        <span class="dress-tag">Tons naturels</span>
-        <span class="dress-tag">Lin &amp; coton</span>
-        <span class="dress-tag">Confort</span>
-      </div>
-      <div class="prose" style="margin-top:1.5rem;">
-        <p>Pensez à une <strong>garden party chic</strong> en pleine Dombes. Pas de smoking, pas de robe de gala — mais pas non plus le tee-shirt du dimanche !</p>
-      </div>
+  <div class="bt-stat-grid fade-in d5">
+    <div class="bt-stat">
+      <div class="bt-stat-num">14h</div>
+      <div class="bt-stat-label">Début · pas de retard</div>
     </div>
-    <div class="tenue-text">
-      <h3>Pour Madame</h3>
-      <div class="prose">
-        <p>Robe longue ou midi en lin, en mousseline ou en coton. Tons crème, terracotta, sauge, blanc cassé. Cheveux libres ou en chignon flou. Chaussures plates conseillées (l'herbe et les graviers ne pardonnent pas les talons aiguilles).</p>
-      </div>
-      <h3 style="margin-top:1.5rem;">Pour Monsieur</h3>
-      <div class="prose">
-        <p>Chemise en lin, pantalon habillé ou chino beige/écru, veste légère bienvenue (les soirées de juin peuvent être fraîches). Cravate optionnelle. Espadrilles ou derbies clairs. Sneakers blanches acceptées si elles sont élégantes.</p>
-      </div>
+    <div class="bt-stat">
+      <div class="bt-stat-num">20</div>
+      <div class="bt-stat-label">Places max</div>
+    </div>
+    <div class="bt-stat">
+      <div class="bt-stat-num">15€</div>
+      <div class="bt-stat-label">Inscription tournoi</div>
+    </div>
+    <div class="bt-stat">
+      <div class="bt-stat-num">🏆</div>
+      <div class="bt-stat-label">Trophée &amp; lots</div>
     </div>
   </div>
 
-  <div class="section-rule"></div>
+  <div class="bt-gauge-wrap">
+    <div class="bt-gauge-header">
+      <span>Inscrits au tournoi</span>
+      <span id="gaugeCount"><strong>0</strong> / 20</span>
+    </div>
+    <div class="bt-gauge">
+      <div class="bt-gauge-fill" id="gaugeFill" style="width:0%;"></div>
+    </div>
+    <p class="bt-gauge-note">⚠️ Places limitées — premier inscrit, premier servi.</p>
+  </div>
 
-  <h3>💡 Conseil pratique</h3>
   <div class="prose">
-    <p>On sera <strong>dehors toute la soirée</strong>. Apportez une petite veste ou un pull pour la nuit, et des chaussures dans lesquelles vous pouvez marcher sur l'herbe et — surtout — <strong>danser</strong> jusqu'au bout de la nuit.</p>
-    <p style="font-style:italic;color:var(--cream-dim);">L'élégance, c'est aussi se sentir bien dans ce qu'on porte.</p>
+    <p>Rendez-vous le <strong>samedi 13 juin</strong> dans les champs de Lapeyrouse pour un <strong>tournoi de ball-trap convivial</strong> — que tu sois habitué·e ou que tu n'aies jamais touché un fusil de ta vie.</p>
+    <p>Encadrement par une personne qualifiée, fusils et munitions fournis. Sécurité absolue.</p>
+  </div>
+
+  <!-- TROIS OPTIONS DE PARTICIPATION -->
+  <div class="bt-options bt-options-3">
+
+    <div class="bt-option bt-option-tournament">
+      <div class="bt-option-tag">Option 1</div>
+      <h3>🏆 Tournoi compétition</h3>
+      <p class="bt-option-price">15 €</p>
+      <p class="bt-option-desc">Couvre les cartouches, les disques et l'organisation. <strong>Places limitées à 20.</strong> Inscription par virement obligatoire.</p>
+    </div>
+
+    <div class="bt-option bt-option-free">
+      <div class="bt-option-tag">Option 2</div>
+      <h3>🎯 Tirer pour le plaisir</h3>
+      <p class="bt-option-price">Gratuit</p>
+      <p class="bt-option-desc">Tu veux <strong>essayer le ball-trap</strong> sans participer au tournoi ? Tu pourras venir tirer quelques disques entre les manches. <em>Tirs gratuits proposés en fonction du temps et des cartouches disponibles.</em></p>
+    </div>
+
+    <div class="bt-option bt-option-spectator">
+      <div class="bt-option-tag">Option 3</div>
+      <h3>☕ Profiter de l'aprem</h3>
+      <p class="bt-option-price">Gratuit</p>
+      <p class="bt-option-desc">Pas envie de tirer ? Tu peux <strong>juste passer profiter de l'après-midi</strong>, encourager les tireurs, papoter, prendre l'air. Bienvenue à tous !</p>
+    </div>
+
+  </div>
+
+  <!-- DÉROULÉ TOURNOI -->
+  <div class="bt-rules">
+    <h3 style="color:#f5e8c8;margin-top:0;">📋 Le déroulé du tournoi</h3>
+    <ol>
+      <li><strong>14h précises — RDV sur place</strong> pour un café d'accueil. <strong>Pas de retard</strong>, le brief sécurité prend du temps et n'est pas évitable.</li>
+      <li><strong>Briefing sécurité</strong> obligatoire pour tous les participants — débutants comme expérimentés.</li>
+      <li><strong>Démonstration</strong> et essais à blanc pour les nouveaux tireurs.</li>
+      <li><strong>Phase qualifications</strong> : 15 plateaux par tireur. Les <strong>16 meilleurs scores</strong> passent au tournoi.</li>
+      <li><strong>Phase tournoi</strong> : matchs en 1 vs 1 sur <strong>5 plateaux par tireur</strong>. Le gagnant continue, l'autre est éliminé. En cas d'égalité : <strong>mort subite</strong>.</li>
+      <li><strong>Finale</strong> en <strong>10 plateaux</strong>. En cas d'égalité : mort subite jusqu'au décrochage.</li>
+      <li><strong>Remise du trophée</strong> et apéritif vers 17h.</li>
+    </ol>
+  </div>
+
+  <!-- RÈGLES STRICTES -->
+  <div class="bt-warning">
+    <h3 style="color:#ffcc66;margin-top:0;">⚠️ Règles non négociables</h3>
+    <ul>
+      <li><strong>Aucune tolérance pour l'alcool</strong> — venez sobres.</li>
+      <li><strong>Pas de retard</strong> — le briefing sécurité est obligatoire et chronométré.</li>
+      <li><strong>Tenue et chaussures fermées</strong> obligatoires.</li>
+      <li><strong>Bouchons d'oreilles</strong> fournis — port obligatoire.</li>
+      <li>Toute personne ne respectant pas le brief sécu sera exclue du tournoi (pas de remboursement).</li>
+    </ul>
+  </div>
+
+  <div class="prose">
+    <h2 style="color:#f5e8c8;">🎁 Les prix</h2>
+    <p>Pour le gagnant du tournoi : un <strong>trophée</strong> et quelques lots <em>encore à définir</em>… mais on peut déjà te dire que <strong>ça va être vraiment sympa</strong>. Stay tuned.</p>
+  </div>
+
+  <!-- INSCRIPTION -->
+  <div class="bt-signup">
+    <h2 style="color:#f5e8c8;margin-top:0;">📝 Comment s'inscrire au tournoi ?</h2>
+    <p style="color:rgba(245,232,200,0.85);font-size:0.95rem;line-height:1.7;margin:1rem 0 1.5rem;">
+      Pour t'inscrire, envoie-moi un message WhatsApp avec les infos suivantes :
+    </p>
+
+    <ul class="bt-signup-info">
+      <li><strong>Nom et prénom</strong></li>
+      <li><strong>As-tu ton propre fusil ?</strong> (oui / non)</li>
+      <li><strong>Si oui : accepterais-tu de le prêter aux autres participants ?</strong> 🙏 <em>(ça aiderait vraiment l'organisation)</em></li>
+    </ul>
+
+    <ol class="bt-signup-steps">
+      <li>
+        <span class="bt-step-num">1</span>
+        <div><strong>Envoie le message WhatsApp</strong> avec les 3 infos ci-dessus.</div>
+      </li>
+      <li>
+        <span class="bt-step-num">2</span>
+        <div><strong>Effectue le virement de 15 €</strong> — je t'envoie mon RIB en réponse.</div>
+      </li>
+      <li>
+        <span class="bt-step-num">3</span>
+        <div><strong>Ta place est confirmée</strong> dès réception du virement.</div>
+      </li>
+    </ol>
+
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="https://wa.me/33769939389?text=Salut%20!%20Je%20m'inscris%20au%20ball-trap%20du%2013%20juin%20%F0%9F%8E%AF%0A%0ANom%20%3A%20%0APr%C3%A9nom%20%3A%20%0AJ'ai%20mon%20propre%20fusil%20%3A%20oui%20%2F%20non%0AJe%20peux%20le%20pr%C3%AAter%20%3A%20oui%20%2F%20non" class="btn-send" style="text-decoration:none;background:#a8893d;font-size:0.85rem;padding:1rem 2.2rem;">
+        🎯 Je m'inscris au tournoi (15 €)
+      </a>
+    </div>
+
+    <p style="text-align:center;margin-top:1.8rem;font-size:0.85rem;color:rgba(245,232,200,0.7);font-style:italic;">
+      Tu veux juste venir tirer gratuitement entre les manches, ou simplement profiter de l'aprem ?<br>
+      <a href="https://wa.me/33769939389?text=Salut%20!%20Je%20viens%20au%20ball-trap%20du%2013%20juin%20mais%20pas%20au%20tournoi%20%F0%9F%8E%AF" style="color:#f5e8c8;">Préviens-moi quand même par message</a>, c'est plus simple pour l'organisation.
+    </p>
   </div>
 
 </div>
 
 <script>
-var current = 0;
-var total = 4;
-var track = document.getElementById('carouselTrack');
-var dots = document.querySelectorAll('.carousel-dot');
+var inscrits = 0;  // change cette valeur quand tu reçois un virement
+var maxPlaces = 20;
+var pct = (inscrits / maxPlaces) * 100;
+document.getElementById('gaugeFill').style.width = pct + '%';
+document.getElementById('gaugeCount').innerHTML = '<strong>' + inscrits + '</strong> / ' + maxPlaces;
 
-function updateCarousel() {
-  track.style.transform = 'translateX(-' + (current * 100) + '%)';
-  dots.forEach(function(d, i) {
-    d.classList.toggle('active', i === current);
-  });
-}
-function moveCarousel(dir) {
-  current = (current + dir + total) % total;
-  updateCarousel();
-}
-function goToSlide(i) {
-  current = i;
-  updateCarousel();
-}
-
-// Auto-play subtil
-setInterval(function() { moveCarousel(1); }, 6000);
+var fill = document.getElementById('gaugeFill');
+if (pct >= 80) fill.style.background = 'linear-gradient(90deg, #c97a2b, #d44a2b)';
+else if (pct >= 50) fill.style.background = 'linear-gradient(90deg, #a8893d, #c97a2b)';
 </script>
 
 </body>
