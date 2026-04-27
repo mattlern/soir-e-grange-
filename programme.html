@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programme · La Grange</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page-content">
+
+  <a href="index.html" class="back-link">Retour à l'accueil</a>
+
+  <p class="page-eyebrow">Au programme</p>
+  <h1 class="page-title">Le <em>déroulé</em><br>de la soirée</h1>
+  <p class="page-subtitle">De 19h30 jusqu'au bout de la nuit — voici comment ça va se passer.</p>
+
+  <ul class="timeline">
+
+    <li class="timeline-item">
+      <span class="timeline-time">19h30</span>
+      <div class="timeline-content">
+        <h3>Arrivée &amp; apéritif</h3>
+        <p>Cocktails dans le parc du château, retrouvailles, premiers verres. L'heure dorée pour profiter de la lumière du soir et faire connaissance.</p>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <span class="timeline-time">21h00</span>
+      <div class="timeline-content">
+        <h3>Le moment apéro dînatoire</h3>
+        <p>Pas de dîner assis traditionnel — un grand buffet partagé en plein air, à grignoter au gré de la soirée. Cuisine généreuse, vins choisis, tablées informelles.</p>
+        <span class="mystery-tag">✦ Une surprise pendant ce moment</span>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <span class="timeline-time">22h30</span>
+      <div class="timeline-content">
+        <h3>Le moment tant attendu…</h3>
+        <p>Une animation dont on ne dira rien ici. Quelques indices plus bas, si vous osez chercher.</p>
+        <span class="mystery-tag">✦ Indice : préparez-vous à bouger</span>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <span class="timeline-time">23h30</span>
+      <div class="timeline-content">
+        <h3>La nuit s'emballe</h3>
+        <p>Musique, danse, étoiles. Ce qui se passe dans le parc reste dans le parc.</p>
+        <span class="mystery-tag">✦ Indice : le ciel sera de la fête</span>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <span class="timeline-time">∞</span>
+      <div class="timeline-content">
+        <h3>Jusqu'au bout de la nuit</h3>
+        <p>La fête se prolonge jusqu'à plus soif. Tente dans les champs ou retour Lyon — les deux options sont possibles (voir <a href="adresse.html#dormir" style="color:var(--cream);text-decoration:underline;">infos transport</a>).</p>
+      </div>
+    </li>
+
+  </ul>
+
+  <div class="section-rule" id="surprises"></div>
+
+  <!-- ── SURPRISES ─────────────────── -->
+  <p class="page-eyebrow">Chut…</p>
+  <h2>Les <em style="font-style:italic;color:var(--cream-dim);font-weight:300;">mystères</em> de la soirée</h2>
+  <div class="prose">
+    <p>Trois indices. Trois énigmes. Une seule façon de savoir : être là.</p>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>🌙 Indice n°1</h3>
+      <p><em>« Quand la nuit tombe, quelque chose s'élève. Ce n'est pas un oiseau, ce n'est pas un avion… »</em></p>
+    </div>
+    <div class="info-card">
+      <h3>🎭 Indice n°2</h3>
+      <p><em>« Il y aura des visages que vous ne reconnaîtrez pas tout de suite. Et pourtant, vous les connaissez bien. »</em></p>
+    </div>
+    <div class="info-card">
+      <h3>🎶 Indice n°3</h3>
+      <p><em>« Une certaine chanson jouera ce soir-là. Vous ne l'oublierez pas. Elle non plus. »</em></p>
+    </div>
+  </div>
+
+  <!-- ── FORMULAIRE WHATSAPP ─────────────────── -->
+  <div class="surprise-box">
+    <h3>✨ Tu as une idée à proposer ?</h3>
+    <div class="prose">
+      <p style="color:rgba(253,246,236,0.85);">Une animation, un jeu, une chanson, un défi, un truc improbable… toutes les idées sont bonnes à prendre. Écris-moi, je reçois directement par WhatsApp.</p>
+    </div>
+    <textarea id="ideaText" placeholder="Mon idée géniale pour la soirée…"></textarea>
+    <button class="btn-send" onclick="sendIdea()">
+      💬 Envoyer mon idée par WhatsApp
+    </button>
+  </div>
+
+  <div class="section-rule"></div>
+
+  <!-- ── COUP DE MAIN ─────────────────── -->
+  <h2>🤝 Un coup de main pour préparer ?</h2>
+  <div class="prose">
+    <p>Je cherche <strong>une ou deux personnes motivées</strong> pour venir m'aider à préparer la soirée — soit dans la semaine qui précède, soit pendant le week-end même. Décoration, mise en place, derniers préparatifs…</p>
+    <p>Si tu es chaud(e), envoie-moi un message ! Je promets en échange un avant-goût exclusif de la soirée et beaucoup de bonne humeur.</p>
+    <p style="margin-top:1.5rem;">
+      <a href="https://wa.me/33769939389?text=Salut%20!%20Je%20veux%20bien%20donner%20un%20coup%20de%20main%20avant%20la%20soirée%20%3A)" class="btn-send" style="text-decoration:none;">
+        💬 Je veux aider — Envoyer un message
+      </a>
+    </p>
+  </div>
+
+</div>
+
+<script>
+function sendIdea() {
+  var text = document.getElementById('ideaText').value.trim();
+  if (!text) {
+    alert('Écris d\'abord ton idée !');
+    return;
+  }
+  var msg = encodeURIComponent('💡 Idée pour la soirée à La Grange : ' + text);
+  window.open('https://wa.me/33769939389?text=' + msg, '_blank');
+}
+</script>
+
+</body>
+</html>
