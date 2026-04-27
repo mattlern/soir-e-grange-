@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ball-trap · La Grange</title>
+  <title>Ball-trap · La Grange · 13 Juin 2026</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="ball-trap-page">
 
-<!-- Cible décorative en fond -->
 <svg class="target-deco" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <circle cx="100" cy="100" r="95" fill="none" stroke="#f5e8c8" stroke-width="0.5"/>
   <circle cx="100" cy="100" r="75" fill="none" stroke="#f5e8c8" stroke-width="0.5"/>
@@ -24,73 +23,147 @@
   <a href="index.html" class="back-link">Retour à l'accueil</a>
 
   <div class="bt-hero">
-    <p class="eyebrow fade-in d1">Avant la soirée &middot; Samedi 13 Juin · après-midi</p>
+    <p class="eyebrow fade-in d1">Samedi 13 Juin 2026 &middot; Après-midi</p>
     <h1 class="fade-in d2">Concours de <em>Ball-trap</em></h1>
     <div class="ornament fade-in d3" aria-hidden="true" style="justify-content:center;color:rgba(245,232,200,0.6);">
       <span class="orn-line"></span>
       <span class="orn-dot"></span>
       <span class="orn-line"></span>
     </div>
-    <p class="page-subtitle fade-in d4">Un concours pour pimenter l'après-midi avant la grande soirée.<br>Débutants bienvenus, champions encore plus.</p>
+    <p class="page-subtitle fade-in d4">À La Grange, Lapeyrouse · Tournoi convivial<br>Débutants bienvenus, champions encore plus.</p>
   </div>
 
   <div class="bt-stat-grid fade-in d5">
     <div class="bt-stat">
       <div class="bt-stat-num">14h</div>
-      <div class="bt-stat-label">Début</div>
+      <div class="bt-stat-label">Début · pas de retard</div>
     </div>
     <div class="bt-stat">
-      <div class="bt-stat-num">25</div>
-      <div class="bt-stat-label">Plateaux</div>
+      <div class="bt-stat-num">20</div>
+      <div class="bt-stat-label">Places max</div>
     </div>
     <div class="bt-stat">
-      <div class="bt-stat-num">∞</div>
-      <div class="bt-stat-label">Fous rires</div>
+      <div class="bt-stat-num">15€</div>
+      <div class="bt-stat-label">Inscription tournoi</div>
     </div>
     <div class="bt-stat">
       <div class="bt-stat-num">🏆</div>
-      <div class="bt-stat-label">Trophée</div>
+      <div class="bt-stat-label">Trophée &amp; lots</div>
     </div>
   </div>
 
-  <div class="prose">
-    <p>Le samedi 13 juin, on commence fort. <strong>Avant les cocktails du soir</strong>, on va se retrouver dans les champs derrière La Grange pour un <strong>concours de ball-trap convivial</strong> ouvert à tous — que tu sois habitué·e ou que tu n'aies jamais touché un fusil de ta vie.</p>
-    <p>Encadrement par une personne qualifiée, fusils et munitions fournis. Sécurité absolue, ambiance détendue.</p>
+  <div class="bt-gauge-wrap">
+    <div class="bt-gauge-header">
+      <span>Inscrits au tournoi</span>
+      <span id="gaugeCount"><strong>0</strong> / 20</span>
+    </div>
+    <div class="bt-gauge">
+      <div class="bt-gauge-fill" id="gaugeFill" style="width:0%;"></div>
+    </div>
+    <p class="bt-gauge-note">⚠️ Places limitées — premier inscrit, premier servi.</p>
   </div>
 
+  <div class="prose">
+    <p>Le samedi 13 juin, on commence fort. <strong>Avant les cocktails du soir</strong>, on se retrouve dans les champs derrière La Grange pour un <strong>tournoi de ball-trap convivial</strong> — que tu sois habitué·e ou que tu n'aies jamais touché un fusil de ta vie.</p>
+    <p>Encadrement par une personne qualifiée, fusils et munitions fournis. Sécurité absolue.</p>
+  </div>
+
+  <!-- DEUX OPTIONS -->
+  <div class="bt-options">
+    <div class="bt-option bt-option-tournament">
+      <div class="bt-option-tag">Option 1</div>
+      <h3>🏆 Tournoi compétition</h3>
+      <p class="bt-option-price">15 €</p>
+      <p class="bt-option-desc">Couvre les cartouches, les disques et l'organisation. <strong>Places limitées à 20.</strong> Inscription par virement obligatoire.</p>
+    </div>
+    <div class="bt-option bt-option-free">
+      <div class="bt-option-tag">Option 2</div>
+      <h3>🎯 Tirer pour le plaisir</h3>
+      <p class="bt-option-price">Gratuit</p>
+      <p class="bt-option-desc">Tu n'es pas inscrit·e au tournoi mais tu veux <strong>essayer le ball-trap</strong> ? Tu pourras venir tirer quelques disques entre les manches, sans pression, sans paiement. Juste pour le plaisir.</p>
+    </div>
+  </div>
+
+  <!-- DÉROULÉ TOURNOI -->
   <div class="bt-rules">
-    <h3 style="color:#f5e8c8;margin-top:0;">📋 Comment ça marche ?</h3>
+    <h3 style="color:#f5e8c8;margin-top:0;">📋 Le déroulé du tournoi</h3>
     <ol>
-      <li><strong>RDV à 14h</strong> à La Grange pour un café d'accueil</li>
-      <li><strong>Briefing sécurité</strong> de 15 min — obligatoire pour tout le monde</li>
-      <li><strong>Démonstration</strong> et essais à blanc pour les débutants</li>
-      <li><strong>Concours</strong> : 25 plateaux par personne, le meilleur score gagne</li>
-      <li><strong>Remise du trophée</strong> vers 17h, suivie de l'apéritif</li>
-      <li>Le gagnant ouvre la danse le soir 💃</li>
+      <li><strong>14h précises — RDV à La Grange</strong> pour un café d'accueil. <strong>Pas de retard</strong>, le brief sécurité prend du temps et n'est pas évitable.</li>
+      <li><strong>Briefing sécurité</strong> obligatoire pour tous les participants — débutants comme expérimentés.</li>
+      <li><strong>Démonstration</strong> et essais à blanc pour les nouveaux tireurs.</li>
+      <li><strong>Phase qualifications</strong> : 15 plateaux par tireur. Les <strong>16 meilleurs scores</strong> passent au tournoi.</li>
+      <li><strong>Phase tournoi</strong> : matchs en 1 vs 1 sur <strong>4 plateaux par tireur</strong>. Le gagnant continue, l'autre est éliminé. En cas d'égalité : <strong>mort subite</strong>.</li>
+      <li><strong>Finale</strong> en <strong>10 plateaux</strong>. En cas d'égalité : mort subite jusqu'au décrochage.</li>
+      <li><strong>Remise du trophée</strong> et apéritif vers 17h. Le gagnant ouvre la danse le soir 💃</li>
     </ol>
   </div>
 
-  <h2 style="color:#f5e8c8;">Tu participes ?</h2>
+  <!-- RÈGLES STRICTES -->
+  <div class="bt-warning">
+    <h3 style="color:#ffcc66;margin-top:0;">⚠️ Règles non négociables</h3>
+    <ul>
+      <li><strong>Aucune tolérance pour l'alcool</strong> — venez sobres, on boira après.</li>
+      <li><strong>Pas de retard</strong> — le briefing sécurité est obligatoire et chronométré.</li>
+      <li><strong>Tenue et chaussures fermées</strong> obligatoires (changement de tenue possible avant la soirée).</li>
+      <li><strong>Bouchons d'oreilles</strong> fournis — port obligatoire.</li>
+      <li>Toute personne ne respectant pas le brief sécu sera exclue du tournoi (pas de remboursement).</li>
+    </ul>
+  </div>
+
   <div class="prose">
-    <p>L'inscription est <strong>gratuite mais obligatoire</strong> (pour prévoir les munitions). Envoie-moi un message pour confirmer ta participation au ball-trap.</p>
-    <p style="margin-top:1.5rem;">
-      <a href="https://wa.me/33769939389?text=Salut%20!%20Je%20veux%20participer%20au%20ball-trap%20du%2013%20juin%20%F0%9F%8E%AF" class="btn-send" style="text-decoration:none;background:#a8893d;">
-        🎯 Je m'inscris au ball-trap
+    <h2 style="color:#f5e8c8;">🎁 Les prix</h2>
+    <p>Pour le gagnant du tournoi : un <strong>trophée</strong> et quelques lots <em>encore à définir</em>… mais on peut déjà te dire que <strong>ça va être vraiment sympa</strong>. Stay tuned.</p>
+  </div>
+
+  <!-- INSCRIPTION -->
+  <div class="bt-signup">
+    <h2 style="color:#f5e8c8;margin-top:0;">📝 Comment s'inscrire au tournoi ?</h2>
+    <ol class="bt-signup-steps">
+      <li>
+        <span class="bt-step-num">1</span>
+        <div><strong>Envoie-moi un message WhatsApp</strong> avec ton <strong>nom et prénom</strong>.</div>
+      </li>
+      <li>
+        <span class="bt-step-num">2</span>
+        <div><strong>Effectue le virement de 15 €</strong> — je t'envoie mon RIB en réponse.</div>
+      </li>
+      <li>
+        <span class="bt-step-num">3</span>
+        <div><strong>Ta place est confirmée</strong> dès réception du virement. Je mets à jour la jauge ci-dessus.</div>
+      </li>
+    </ol>
+
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="https://wa.me/33769939389?text=Salut%20!%20Je%20m'inscris%20au%20ball-trap%20du%2013%20juin%20%F0%9F%8E%AF%0ANom%20%3A%20%0APr%C3%A9nom%20%3A%20" class="btn-send" style="text-decoration:none;background:#a8893d;font-size:0.85rem;padding:1rem 2.2rem;">
+        🎯 Je m'inscris au tournoi (15 €)
       </a>
+    </div>
+
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.85rem;color:rgba(245,232,200,0.7);font-style:italic;">
+      Tu veux juste venir tirer gratuitement entre les manches ?<br>
+      <a href="https://wa.me/33769939389?text=Salut%20!%20Je%20veux%20venir%20tirer%20quelques%20disques%20au%20ball-trap%20(sans%20participer%20au%20tournoi)%20%F0%9F%8E%AF" style="color:#f5e8c8;">Préviens-moi quand même par message</a>, c'est plus simple pour l'organisation.
     </p>
   </div>
 
   <div class="section-rule"></div>
 
-  <h3 style="color:#f5e8c8;">⚠️ Bon à savoir</h3>
-  <div class="prose">
-    <p>— Tenue confortable et chaussures fermées obligatoires (changement possible avant la soirée)<br>
-    — Bouchons d'oreilles fournis<br>
-    — Aucune expérience requise<br>
-    — Le concours est totalement <strong>optionnel</strong> — tu peux aussi nous rejoindre directement à 19h30 pour la soirée</p>
-  </div>
+  <p style="text-align:center;font-size:0.78rem;color:rgba(245,232,200,0.55);letter-spacing:0.05em;margin-top:2rem;">
+    🔗 Cette page peut être partagée séparément avec des personnes non conviées à la soirée.
+  </p>
 
 </div>
+
+<script>
+var inscrits = 0;  // change cette valeur quand tu reçois un virement
+var maxPlaces = 20;
+var pct = (inscrits / maxPlaces) * 100;
+document.getElementById('gaugeFill').style.width = pct + '%';
+document.getElementById('gaugeCount').innerHTML = '<strong>' + inscrits + '</strong> / ' + maxPlaces;
+
+var fill = document.getElementById('gaugeFill');
+if (pct >= 80) fill.style.background = 'linear-gradient(90deg, #c97a2b, #d44a2b)';
+else if (pct >= 50) fill.style.background = 'linear-gradient(90deg, #a8893d, #c97a2b)';
+</script>
 
 </body>
 </html>
