@@ -479,16 +479,16 @@ h3 {
   position: relative;
 }
 .carousel-slide-1 {
-  background: linear-gradient(135deg, #d4a574 0%, #8a5a3a 100%);
+  background: linear-gradient(135deg, #f5ecd9 0%, #c8b89a 100%);
 }
 .carousel-slide-2 {
-  background: linear-gradient(135deg, #c5b896 0%, #6b6045 100%);
+  background: linear-gradient(135deg, #ede2cc 0%, #b8a584 100%);
 }
 .carousel-slide-3 {
-  background: linear-gradient(135deg, #b08968 0%, #4a3525 100%);
+  background: linear-gradient(135deg, #e8dcc4 0%, #a89576 100%);
 }
 .carousel-slide-4 {
-  background: linear-gradient(135deg, #a89576 0%, #5d4a35 100%);
+  background: linear-gradient(135deg, #f0e6d2 0%, #c5b896 100%);
 }
 .carousel-slide::after {
   content: attr(data-label);
@@ -498,8 +498,8 @@ h3 {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.4rem;
-  color: var(--cream);
-  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  color: #5a3525;
+  text-shadow: 0 2px 12px rgba(255,255,255,0.4);
 }
 .carousel-btn {
   position: absolute;
@@ -563,6 +563,17 @@ h3 {
   font-size: 0.78rem;
   margin: 0.3rem 0.4rem 0.3rem 0;
   color: var(--cream);
+}
+
+.tenue-warning {
+  background: rgba(80, 40, 15, 0.35);
+  border-left: 3px solid #ffcc66;
+  padding: 1.4rem 1.6rem;
+  margin: 2rem 0;
+}
+.tenue-warning h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
 }
 
 /* ── FORMULAIRE SURPRISES ───────────────────────────────────── */
