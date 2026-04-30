@@ -19,10 +19,12 @@
   <!-- ── CAROUSEL ─────────────────── -->
   <div class="carousel" id="carousel">
     <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-slide carousel-slide-1" data-label="Lin & légèreté"></div>
-      <div class="carousel-slide carousel-slide-2" data-label="Tons crème"></div>
-      <div class="carousel-slide carousel-slide-3" data-label="Élégance détendue"></div>
-      <div class="carousel-slide carousel-slide-4" data-label="Esprit jardin"></div>
+      <div class="carousel-slide" data-img="photos/tenue-6.jpg" data-label="Au cœur des prés"></div>
+      <div class="carousel-slide" data-img="photos/tenue-4.jpg" data-label="Les filles"></div>
+      <div class="carousel-slide" data-img="photos/tenue-5.jpg" data-label="Les garçons"></div>
+      <div class="carousel-slide" data-img="photos/tenue-1.jpg" data-label="Sous les guirlandes"></div>
+      <div class="carousel-slide" data-img="photos/tenue-2.jpg" data-label="L'élégance détendue"></div>
+      <div class="carousel-slide" data-img="photos/tenue-3.jpg" data-label="Esprit champêtre"></div>
     </div>
     <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Précédent">‹</button>
     <button class="carousel-btn carousel-next" onclick="moveCarousel(1)" aria-label="Suivant">›</button>
@@ -32,6 +34,8 @@
     <button class="carousel-dot" onclick="goToSlide(1)"></button>
     <button class="carousel-dot" onclick="goToSlide(2)"></button>
     <button class="carousel-dot" onclick="goToSlide(3)"></button>
+    <button class="carousel-dot" onclick="goToSlide(4)"></button>
+    <button class="carousel-dot" onclick="goToSlide(5)"></button>
   </div>
 
   <div class="section-rule"></div>
@@ -65,13 +69,6 @@
 
   <div class="section-rule"></div>
 
-  <div class="tenue-warning">
-    <h3 style="color:#ffcc66;margin-top:0;">⚠️ Petite règle</h3>
-    <div class="prose">
-      <p style="margin:0;"><strong>Pas de baskets</strong>, même blanches. On reste sur de l'élégant — espadrilles, mocassins, derbies, sandales habillées, petits talons, chaussures plates chic. Tout sauf les sneakers du quotidien.</p>
-    </div>
-  </div>
-
   <h3>💡 Conseil pratique</h3>
   <div class="prose">
     <p>On sera <strong>dehors toute la soirée</strong>. Apportez une petite veste ou un pull (blanc/crème toujours) pour la nuit, et des chaussures dans lesquelles vous pouvez marcher sur l'herbe et — surtout — <strong>danser</strong> jusqu'au bout de la nuit.</p>
@@ -81,8 +78,28 @@
 </div>
 
 <script>
+// ── INIT : injecte les éléments image + fond flouté pour chaque slide ──
+var slides = document.querySelectorAll('.carousel-slide');
+slides.forEach(function(slide) {
+  var src = slide.getAttribute('data-img');
+  if (!src) return;
+  // Fond flouté
+  var bg = document.createElement('div');
+  bg.className = 'slide-bg';
+  bg.style.backgroundImage = 'url("' + src + '")';
+  // Image principale (entière, contain)
+  var img = document.createElement('img');
+  img.className = 'slide-img';
+  img.src = src;
+  img.alt = '';
+  img.loading = 'lazy';
+  slide.prepend(img);
+  slide.prepend(bg);
+});
+
+// ── CAROUSEL ──
 var current = 0;
-var total = 4;
+var total = slides.length;
 var track = document.getElementById('carouselTrack');
 var dots = document.querySelectorAll('.carousel-dot');
 
@@ -101,7 +118,7 @@ function goToSlide(i) {
   updateCarousel();
 }
 
-// Auto-play subtil
+// Auto-play
 setInterval(function() { moveCarousel(1); }, 6000);
 </script>
 
